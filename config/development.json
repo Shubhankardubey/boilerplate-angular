@@ -1,4 +1,13 @@
 {
+  "logger": {
+    "console": true
+  },
+  "papertrail": {
+    "host": "",
+    "port": "",
+    "handleExceptions": "",
+    "program": ""
+  },
   "www": {
     "port": 80
   }

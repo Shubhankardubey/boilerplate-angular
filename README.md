@@ -37,6 +37,11 @@ Only `public.*` entries are accessible via client. Entries marked with `REQUIRED
 
 **NOTE:** Entries with `REQUIRED` needs to be manually provided either via `local*.json` during development or in environment variables.
 
+- `logger.console` `Boolean` - For enabling registration of `Console` as logger transport. (Default: `true`)
+- `papertrail.host` `String` - If provided, logging via [Papertrail](https://papertrail.com) will be enabled.
+- `papertrail.port` `String` - If provided, logging via [Papertrail](https://papertrail.com) will be enabled.
+- `papertrail.program` `String` - Papertrail program. Useful for prefixing log messages with custom namespace.
+- `papertrail.handleExceptions` `Boolean` - For enabling logging of un-handled exceptions via papertrail. (Default: `false`)
 - `public.apiEndpoint` `String` - URL for API endpoint.
 - `public.sentryDSN` `String` - API key for [Sentry](https://sentry.io)
 - `public.serverLogUrl` `String` - Any `ERROR` log will be `POST` to provided endpoint if provided.
