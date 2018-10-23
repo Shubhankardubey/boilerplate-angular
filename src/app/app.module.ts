@@ -1,7 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {ErrorHandler, NgModule, Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import * as Sentry from '@sentry/browser';
+import * as Raven from 'raven-js';
 import {LoggerModule, NgxLoggerLevel} from 'ngx-logger';
 import {TranslateModule, TranslateLoader, TranslateService} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -17,7 +17,7 @@ import {NavbarComponent, FooterComponent} from './components';
 import {AboutUsComponent, FeaturesComponent} from './pages';
 import {IntercomService} from './services';
 import {ReactiveFormsModule} from '@angular/forms';
-import {C} from '@angular/core/src/render3';
+// import {C} from '@angular/core/src/render3';
 
 // build declarations
 const declarations = [
@@ -34,20 +34,15 @@ export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-// initialize sentry
-Sentry.init({
-  dsn: CONFIG.sentryDSN,
-  environment: CONFIG.sentryENV
-});
+Raven
+  .config(CONFIG.sentryDSN, {
+    environment: CONFIG.sentryENV
+  })
+  .install();
 
-@Injectable()
-export class SentryErrorHandler implements ErrorHandler {
-  constructor() {
-  }
-
-  handleError(error) {
-    Sentry.captureException(error.originalError || error);
-    throw error;
+export class RavenErrorHandler implements ErrorHandler {
+  handleError(err: any): void {
+    Raven.captureException(err);
   }
 }
 
@@ -84,7 +79,7 @@ export class SentryErrorHandler implements ErrorHandler {
     ])
   ],
   providers: [
-    {provide: ErrorHandler, useClass: SentryErrorHandler},
+    {provide: ErrorHandler, useClass: RavenErrorHandler},
     // bootstrap modal service
     NgbActiveModal,
     // app services
