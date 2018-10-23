@@ -44,6 +44,7 @@ Only `public.*` entries are accessible via client. Entries marked with `REQUIRED
 - `papertrail.handleExceptions` `Boolean` - For enabling logging of un-handled exceptions via papertrail. (Default: `false`)
 - `public.apiEndpoint` `String` - URL for API endpoint.
 - `public.sentryDSN` `String` - API key for [Sentry](https://sentry.io)
+- `public.sentryENV` `String` - Environment for [Sentry](https://sentry.io)
 - `public.serverLogUrl` `String` - Any `ERROR` log will be `POST` to provided endpoint if provided.
 - `public.env` `String` - Set this to `production` to enable production build.
 - `public.intercomAppId` `String` - Workspace ID for [Intercom](https://www.intercom.com).

@@ -8,6 +8,7 @@
     "env": "NODE_ENV",
     "apiEndpoint": "API_ENDPOINT",
     "sentryDSN": "SENTRY_DSN",
+    "sentryENV": "SENTRY_ENV",
     "serverLogUrl": "SERVER_LOG_URL",
     "intercomAppId": "INTERCOM_APP_ID",
     "mixpanelToken": "MIXPANEL_TOKEN",
