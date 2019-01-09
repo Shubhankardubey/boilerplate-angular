@@ -1,6 +1,6 @@
 {
   "FORM_HEADINGS": {
-    "USR_CREATE_ACC": "Please sign up",
+    "USR_CREATE_ACC": "Please sign up"
   },
   "FORM_LABELS": {
     "USR_F_NAME": "First Name",
@@ -22,7 +22,6 @@
     "USR_CREATE_ACC": "Create Account"
   },
   "FORM_MESSAGES": {
-    "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in.",
+    "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in."
   }
 }
-
