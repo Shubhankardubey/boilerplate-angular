@@ -9,14 +9,17 @@ import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Angulartics2Module} from 'angulartics2';
 import {Angulartics2Mixpanel} from 'angulartics2/mixpanel';
 import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
+import {FlashMessagesModule} from 'angular2-flash-messages';
+import {CookieService} from 'ngx-cookie-service';
 
 import CONFIG from '@config';
 import {AppComponent} from './app.component';
 import {AppRouting} from './app.routing';
+import * as AppModules from './modules';
+import * as AppServices from './services';
 import {NavbarComponent, FooterComponent} from './components';
 import {AboutUsComponent, FeaturesComponent} from './pages';
-import {IntercomService} from './services';
-import {ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 // import {C} from '@angular/core/src/render3';
 
 // build declarations
@@ -46,6 +49,12 @@ export class RavenErrorHandler implements ErrorHandler {
   }
 }
 
+class LocalErrorHandler implements ErrorHandler {
+  handleError(err: any) {
+    console.error(err);
+  }
+}
+
 @NgModule({
   declarations,
   imports: [
@@ -55,8 +64,15 @@ export class RavenErrorHandler implements ErrorHandler {
     BrowserModule,
     // bootstrap
     NgbModule,
+    // flash messages
+    FlashMessagesModule.forRoot(),
     // for advanced form directives
     ReactiveFormsModule,
+    FormsModule,
+    // routing
+    AppRouting,
+    // modules
+    AppModules.AccountsModule,
     // logging
     LoggerModule.forRoot({
       level: NgxLoggerLevel.DEBUG,
@@ -79,11 +95,14 @@ export class RavenErrorHandler implements ErrorHandler {
     ])
   ],
   providers: [
-    {provide: ErrorHandler, useClass: RavenErrorHandler},
+    {provide: ErrorHandler, useClass: CONFIG.sentryDSN ? RavenErrorHandler : LocalErrorHandler},
     // bootstrap modal service
     NgbActiveModal,
-    // app services
-    IntercomService
+    // cookie service
+    CookieService,
+    // services
+    AppServices.IntercomService,
+    AppServices.APIService,
   ],
   bootstrap: [AppComponent]
 })
