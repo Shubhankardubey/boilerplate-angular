@@ -49,7 +49,7 @@ export class RavenErrorHandler implements ErrorHandler {
   }
 }
 
-class LocalErrorHandler implements ErrorHandler {
+export class LocalErrorHandler implements ErrorHandler {
   handleError(err: any) {
     console.error(err);
   }
