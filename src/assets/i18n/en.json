@@ -1,217 +1,28 @@
 {
   "FORM_HEADINGS": {
     "USR_CREATE_ACC": "Please sign up",
-    "USR_ACC_LOGIN": "Please sign in",
-    "RESET_PASSWORD": "Reset Your Password",
-    "RECOVER_PASSWORD": "Choose a new password",
-    "FORGOT_PASSWORD": "Forgot password",
-    "UPDATE_PASSWORD": "Update Password"
   },
   "FORM_LABELS": {
     "USR_F_NAME": "First Name",
     "USR_L_NAME": "Last Name",
     "USR_EMAIL": "Email Address",
-    "USR_ORG_NAME": "Organization Name",
-    "USR_STREET": "Street",
-    "USR_COUNTRY": "Country",
     "USR_PWD": "Password",
     "USR_CNF_PWD": "Confirm Password",
-    "USR_CITY": "City",
-    "USR_PO_BOX": "P.O. Box Number",
-    "USR_PHONE": "Phone Number",
-    "USR_ORG_POS": "Position",
-    "USR_NEW_PASSWORD": "New password"
+    "USR_PHONE": "Phone Number"
   },
   "FORM_PLACEHOLDERS": {
     "USR_F_NAME": "Enter First Name",
     "USR_L_NAME": "Enter Last Name",
     "USR_EMAIL": "Enter Email Address",
-    "USR_ORG_NAME": "Enter Organization's Name",
-    "USR_STREET": "Enter Street",
-    "USR_COUNTRY": "Select Country",
     "USR_PWD": "Enter Password",
     "USR_CNF_PWD": "Re-enter Password",
-    "USR_CITY": "Enter City",
-    "USR_PO_BOX": "Enter P.O. Box Number",
-    "USR_PHONE": "Enter Phone Number",
-    "USR_ORG_POS": "Enter Position",
-    "CERT_NAME": "Enter Certificate's Name",
-    "USR_CURRENT_PWD": "Enter Current Password",
-    "USR_NEW_PWD": "Enter New Password",
-    "DIPLOMA_REQ_FILTER_STATUS_CODE": "Filter by Status",
-    "DIPLOMA_NAME": "Enter Diploma Name",
-    "DIPLOMA_ID": "Enter Diploma Id",
-    "YEAR": "Enter Year",
-    "ID_CARD": "Enter Id Card Number",
-    "PRICE_AMOUNT": "Enter Price",
-    "PRICE_CURRENCY": "Select Currency"
+    "USR_PHONE": "Enter Phone Number"
   },
   "FORM_ACTIONS": {
-    "USR_CREATE_ACC": "Create Account",
-    "USR_ACC_LOGIN": "Login",
-    "UPDATE_PASSWORD": "Update Password",
-    "USR_ACC_RST_PWD": "Send Reset Link",
-    "CREATE": "Create",
-    "UPDATE": "Update",
-    "CLOSE": "Close",
-    "CNF": "Confirm",
-    "CONT": "Continue",
-    "PAY": "Pay",
-    "SIGN_UP_ISS": "Sign Up as Issuer",
-    "SIGN_UP_REC": "Sign Up as Recipient"
+    "USR_CREATE_ACC": "Create Account"
   },
   "FORM_MESSAGES": {
     "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in.",
-    "DIPLOMA_REQ_NEW_OK": "Request for new diploma was issued successfully",
-    "USR_RESET_REQUEST_SUCCESS": "We sent a recovery link to your email address:",
-    "USR_ACC_PWD_UPDATE_OK": "Account password was updated successfully"
-  },
-  "PAGE_TITLES": {
-    "ACCOUNTS_LOGIN": "Vrai Diplome - Login",
-    "ISSUER_REGISTER": "Vrai Diplome - New Issuer Account",
-    "RECIPIENT_REGISTER": "Vrai Diplome - New Recipient Account",
-    "RECIPIENT_DASHBOARD": "Vrai Diplome - Recipient Dashboard",
-    "ISSUER_DASHBOARD": "Vrai Diplome - Issuer Dashboard",
-    "RESET_PASSWORD": "Vrai Diplome - Reset Your Password",
-    "RECOVER_PASSWORD": "Vrai Diplome - Choose a new password",
-    "SETTINGS": "Vrai Diplome - Settings",
-    "DIPLOMAS": "Vrai Diplome - Diplomas",
-    "TRANSACTION_DETAILS": "Vrai Diplome - Transaction Details"
-  },
-  "DIALOG_TITLES": {
-    "TRANSACTION_INIT": "Make Payment",
-    "NEW_DIPLOMA": "New Diploma",
-    "EDIT_DIPLOMA": "Edit Diploma",
-    "DELETE_DIPLOMA": "Delete Diploma",
-    "TRANSACTION_TRACK": "Track Transaction",
-    "SHARE_DIPLOMA": "Share Diploma"
-  },
-  "STATUS_REPORTS": {
-    "TRANSACTION_INIT": "Please wait while we initiate the requested transaction",
-    "TRANSACTION_REDIRECT": "Please wait while we redirect you to the payment gateway",
-    "TRANSACTION_TRACK_LOAD": "Please wait while we load details for the requested transaction",
-    "TRANSACTION_TRACK_AWAIT": "Please wait while we receive the response for your transaction from the payment platform",
-    "TRANSACTION_TRACK_PENDING": "Please wait while payment platform confirms the payment",
-    "TRANSACTION_TRACK_OK": "Your transaction was successful",
-    "TRANSACTION_TRACK_END": "Your transaction was ended. Please contact the payment platform for more info.",
-    "TRANSACTION_TRACK_OK_BACK_PRO": "Your transaction was successful. Redirecting you back to the product."
-  },
-  "DIALOG_ACTIONS": {
-    "CLOSE": "Close",
-    "TRANSACTION_RET_PRO": "Return to Product",
-    "RELOAD_STATUS": "Refresh Status"
-  },
-  "LABELS": {
-    "PRICE_CURRENCY": "Currency",
-    "PRICE_AMOUNT": "Amount",
-    "PRICE_FREE": "Free",
-    "SHARE_DIPLOMA": "Share Diploma"
-  },
-  "DASH": {
-    "USR_DRP_DWN_ACTIONS": {
-      "SETTINGS": "Settings",
-      "ACC_LOGOUT": "Logout"
-    },
-    "CERT_REQ_STATUS_CODES": {
-      "PENDING_PAYMENT": "Pending Payment",
-      "PROCESSING": "Processing",
-      "CERT_RECEIVED": "Diploma Received",
-      "CERT_DELIVERED": "Diploma Delivered",
-      "CERT_ISSUED": "Certificate Issued",
-      "DECLINED_PAYMENT": "Payment Declined"
-    },
-    "TAB_TITLES": {
-      "CHANGE_PWD": "Change Password",
-      "IDENTITY": "Identity",
-      "PROFILE": "Profile"
-    },
-    "FORM_LABELS": {
-      "WALLET_ADDRESS": "Wallet Address",
-      "PUBLIC_KEY": "Public Key"
-    },
-    "LABELS": {
-      "SETTINGS": "Settings",
-      "USR_PROFILE_BASIC": "Basic Details",
-      "USR_PROFILE_ADDRESS": "Address Details",
-      "USR_PROFILE_CONTACT": "Contact Details",
-      "USR_PROFILE_LOGO": "Logo"
-    },
-    "ACTIONS": {
-      "VIEW_DIPLOMA": "View Diploma"
-    },
-    "FORM_ACTIONS": {
-      "UPDATE_PROFILE": "Update Profile",
-      "SAVE_CHANGES": "Save Changes",
-      "PROFILE_CHANGE_LOGO": "Change Logo",
-      "PROFILE_UPLOAD_LOGO": "Upload Logo"
-    },
-    "STATUS_REPORTS": {
-      "USR_PROFILE_UPDATE_OK": "Profile was updated successfully",
-      "USR_PROFILE_NO_LOGO": "No uploaded logo found",
-      "USR_PROFILE_PENDING_LOGO": "Please wait while the selected logo is uploaded",
-      "USR_PROFILE_LOGO_UPLOAD_OK": "Provided logo was uploaded successfully"
-    }
-  },
-  "REC_DASH": {
-    "DIALOG_TITLES": {
-      "NEW_DIPLOMA_REQUEST": "Request Diploma",
-      "VIEW_DIPLOMA_REQUEST_STATUS": "Requested Diploma Status"
-    },
-    "LABELS": {
-      "RECENT_DIPLOMA_REQ": "Diplomas"
-    },
-    "ACTIONS": {
-      "DIPLOMA_REQ_MK_PAYMENT": "Pay Now",
-      "DIPLOMA_REQ_VIEW_CERT": "View Certificate"
-    },
-    "STATUS_REPORTS": {
-      "LOADING_DIPLOMA_REQS": "Please wait while we fetch your requests",
-      "ERR_DIPLOMA_REQ": "We are unable to retrieve your diplomas at the moment. Please refresh the page and try again",
-      "EMPTY_DIPLOMA_REQ": "There are no diplomas associated with your account. Please click on '+' to request a diploma",
-      "LOADING_DIPLOMA_REQ": "Please wait while we fetch your request",
-      "INIT_TRANS_DIPLOMA_REQ": "You are about to initiate a transaction for the payment of diploma request",
-      "DIPLOMA_REQ_PROCESSING": "The request for diploma was submitted successfully",
-      "DIPLOMA_REQ_DECLINED": "The request for diploma was declined due to unsuccessful payment",
-      "DIPLOMA_REQ_PENDING_PAYMENT": "The request for diploma requires payment to be done by the user"
-    },
-    "BTN_TOOLTIPS": {
-      "NEW_DIPLOMA_REQUEST": "Request a new diploma"
-    }
-  },
-  "ISS_DASH": {
-    "LABELS": {
-      "DIPLOMAS": "Diplomas",
-      "DIPLOMA_REQUESTS": "Diploma Requests",
-      "DIPLOMA_ID": "Diploma ID",
-      "YEAR": "Year",
-      "ID_CARD_NUMBER": "ID Card Number",
-      "CERT_ISSUE_ENTER_PWD": "Please specify your password to continue"
-    },
-    "STATUS_REPORTS": {
-      "LOADING_DIPLOMAS": "Please wait while we fetch diplomas",
-      "LOADING_DIPLOMA": "Please wait while we fetch the selected diploma",
-      "ERR_DIPLOMAS": "We are unable to retrieve your diplomas at the moment. Please refresh the page and try again",
-      "EMPTY_DIPLOMAS": "You haven't issued any diplomas yet. Please click on '+' to issue a new one.",
-      "LOADING_DIPLOMA_REQ": "Please wait while we fetch the requests",
-      "ERR_DIPLOMA_REQ": "We are unable to retrieve the diplomas at the moment. Please refresh the page and try again.",
-      "EMPTY_DIPLOMA_REQ": "No diploma requests were found at the moment",
-      "LOADING_DIPLOMA_ISSUE": "Please wait while we issue the selected diploma",
-      "OK_DIPLOMA_ISSUE": "Diploma was issued successfully"
-    },
-    "MESSAGES": {
-      "DIPLOMA_DEL_CNF": "Are you sure you want to delete the selected diploma?"
-    },
-    "BTN_TOOLTIPS": {
-      "NEW_DIPLOMA": "Create a new diploma"
-    },
-    "USR_DRP_DWN_ACTIONS": {
-      "DIPLOMAS": "Diplomas"
-    },
-    "ACTIONS": {
-      "ISSUE_CERTIFICATE": "Issue Certificate"
-    },
-    "DIALOG_TITLES": {
-      "ISSUE_DIPLOMA": "Issue Diploma"
-    }
   }
 }
+
