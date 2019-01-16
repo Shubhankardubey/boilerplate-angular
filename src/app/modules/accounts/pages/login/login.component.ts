@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit {
     this.accountsService.login(this.accountLoginFormGroup.value).subscribe(
       async () => {
         // navigate logged in user to dashboard
-        console.log('login');
+        await this.router.navigateByUrl('/dashboard');
       },
       error => {
         // obtain error from response

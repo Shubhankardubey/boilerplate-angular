@@ -30,10 +30,12 @@
   "PAGE_TITLES": {
     "ACCOUNTS_LOGIN": "JTC - Login",
     "REGISTER": "JTC - Register",
-    "HOME": "JTC - Home"
+    "HOME": "JTC - Home",
+    "DASHBOARD_HOME": "JTC - Dashboard"
   },
   "NAVBAR_HEADINGS": {
     "USR_CREATE_ACC": "Register",
-    "USR_ACC_LOGIN": "Login"
+    "USR_ACC_LOGIN": "Login",
+    "USR_ACC_LOGOUT": "Logout"
   }
 }
