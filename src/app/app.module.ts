@@ -17,7 +17,6 @@ import {AppRouting} from './app.routing';
 import * as AppModules from './modules';
 import * as AppServices from './services';
 import {NavbarComponent, FooterComponent} from './components';
-import {AboutUsComponent, FeaturesComponent} from './pages';
 import {ReactiveFormsModule, FormsModule} from '@angular/forms';
 // import {C} from '@angular/core/src/render3';
 
@@ -27,9 +26,6 @@ const declarations = [
   AppComponent,
   NavbarComponent,
   FooterComponent,
-  // app pages
-  AboutUsComponent,
-  FeaturesComponent
 ];
 
 export function createTranslateLoader(http: HttpClient) {

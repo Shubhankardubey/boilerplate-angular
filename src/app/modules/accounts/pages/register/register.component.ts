@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.accountsService.setTitle('Register');
   }
 
   createAccount() {
