@@ -9,7 +9,6 @@ import {NgbModule, NgbActiveModal} from '@ng-bootstrap/ng-bootstrap';
 import {Angulartics2Module} from 'angulartics2';
 import {Angulartics2Mixpanel} from 'angulartics2/mixpanel';
 import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
-import {FlashMessagesModule} from 'angular2-flash-messages';
 import {CookieService} from 'ngx-cookie-service';
 
 import CONFIG from '@config';
@@ -64,8 +63,6 @@ export class LocalErrorHandler implements ErrorHandler {
     BrowserModule,
     // bootstrap
     NgbModule,
-    // flash messages
-    FlashMessagesModule.forRoot(),
     // for advanced form directives
     ReactiveFormsModule,
     FormsModule,
