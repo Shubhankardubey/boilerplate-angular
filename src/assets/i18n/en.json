@@ -1,3 +1,27 @@
 {
-  "HELLO_WORLD": "Hello World"
+  "FORM_HEADINGS": {
+    "USR_CREATE_ACC": "Please sign up"
+  },
+  "FORM_LABELS": {
+    "USR_F_NAME": "First Name",
+    "USR_L_NAME": "Last Name",
+    "USR_EMAIL": "Email Address",
+    "USR_PWD": "Password",
+    "USR_CNF_PWD": "Confirm Password",
+    "USR_PHONE": "Phone Number"
+  },
+  "FORM_PLACEHOLDERS": {
+    "USR_F_NAME": "Enter First Name",
+    "USR_L_NAME": "Enter Last Name",
+    "USR_EMAIL": "Enter Email Address",
+    "USR_PWD": "Enter Password",
+    "USR_CNF_PWD": "Re-enter Password",
+    "USR_PHONE": "Enter Phone Number"
+  },
+  "FORM_ACTIONS": {
+    "USR_CREATE_ACC": "Create Account"
+  },
+  "FORM_MESSAGES": {
+    "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in."
+  }
 }

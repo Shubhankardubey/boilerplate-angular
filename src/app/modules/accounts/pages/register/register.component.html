@@ -1,0 +1,119 @@
+<div class="container-fluid container-body container-body-background">
+  <div class="row">
+    <div class="container col-md-5">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <img src='/assets/images/logo-small.png' class='logo mb-4' alt='logo'>
+          <h2 class='mb-4'>
+            {{'FORM_HEADINGS.USR_CREATE_ACC' | translate}}
+          </h2>
+        </div>
+      </div>
+      <div class="row form-panel">
+        <div class="col-md-12">
+          <div class="row">
+            <div class="col-md-12">
+              <form [formGroup]="accountCreationFormGroup" (ngSubmit)="createAccount()">
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label class="control-label" for="first_name">
+                      {{'FORM_LABELS.USR_F_NAME' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control' id='first_name' autocomplete='first_name' formControlName='first_name'
+                        name='first_name' type='text' placeholder="{{'FORM_PLACEHOLDERS.USR_F_NAME' | translate}}">
+                    </div>
+                    <div *ngIf="accountCreationValidationErrors['first_name']" class="form-inline-error">
+                      {{accountCreationValidationErrors['first_name']}}
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label class="control-label" for="last_name">
+                      {{'FORM_LABELS.USR_L_NAME' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control' id='last_name' autocomplete='last_name' formControlName='last_name'
+                        name='last_name' type='text' placeholder="{{'FORM_PLACEHOLDERS.USR_L_NAME' | translate}}">
+                    </div>
+                    <div *ngIf="accountCreationValidationErrors['last_name']" class="form-inline-error">
+                      {{accountCreationValidationErrors['last_name']}}
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-8 form-group">
+                    <label class="control-label" for="email">
+                      {{'FORM_LABELS.USR_EMAIL' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control' id='email' autocomplete='email' formControlName='email' name='email'
+                        type='email' placeholder="{{'FORM_PLACEHOLDERS.USR_EMAIL' | translate}}">
+                    </div>
+                    <div *ngIf="accountCreationValidationErrors['email']" class="form-inline-error">
+                      {{accountCreationValidationErrors['email']}}
+                    </div>
+                  </div>
+                  <div class="col-md-4 form-group">
+                    <label class="control-label" for="contact_phone">
+                      {{'FORM_LABELS.USR_PHONE' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control no-spinner' id='contact_phone' autocomplete='contact_phone'
+                        formControlName='contact_phone' name='contact_phone' type='number' placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 form-group">
+                    <label class="control-label" for="password">
+                      {{'FORM_LABELS.USR_PWD' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control' id="password" autocomplete='password' formControlName='password' name='password'
+                        type='password' placeholder="{{'FORM_PLACEHOLDERS.USR_PWD' | translate}}">
+                    </div>
+                    <div *ngIf="accountCreationValidationErrors['password']" class="form-inline-error">
+                      {{accountCreationValidationErrors['password']}}
+                    </div>
+                  </div>
+                  <div class="col-md-6 form-group">
+                    <label class="control-label" for="cnf_password">
+                      {{'FORM_LABELS.USR_CNF_PWD' | translate}}
+                    </label>
+                    <div>
+                      <input class='form-control' id='cnf_password' autocomplete='cnf_password' formControlName='cnf_password'
+                        name='cnf_password' type='password' placeholder="{{'FORM_PLACEHOLDERS.USR_CNF_PWD' | translate}}">
+                    </div>
+                    <div *ngIf="accountCreationValidationErrors['cnf_password']" class="form-inline-error">
+                      {{accountCreationValidationErrors['cnf_password']}}
+                    </div>
+                  </div>
+                </div>
+                <div class="row mt-4">
+                  <div class="col-md-12 form-group text-center">
+                    <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!accountCreationFormGroup.valid">
+                      {{'FORM_ACTIONS.USR_CREATE_ACC' | translate}}
+                      <span *ngIf="accountCreationViewState.isLoading">
+                        &nbsp;<i class="fa fa-spinner fa-spin"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="row mt-2" *ngIf="accountCreationViewState.isFinishedWithError && accountCreationViewState.error">
+                <span class="col-md-12 text-center text-danger">{{accountCreationViewState.error}}</span>
+              </div>
+              <div class="row mt-2" *ngIf="accountCreationViewState.isFinishedWithSuccess">
+                <span class="col-md-12 text-center text-info">{{'FORM_MESSAGES.USR_CREATE_ACC_OK' | translate}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
