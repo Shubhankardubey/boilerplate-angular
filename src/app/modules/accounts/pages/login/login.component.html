@@ -1,0 +1,69 @@
+<div class="container-fluid container-body container-body-background">
+    <div class="row">
+      <div class="container col-md-5 col-xl-3">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <img src='/assets/images/logo-small.png' class='logo mb-4' alt='logo'>
+            <h2 class='mb-4'>
+              {{'FORM_HEADINGS.USR_ACC_LOGIN' | translate}}
+            </h2>
+          </div>
+        </div>
+        <div class="row form-panel">
+          <div class="col-md-12">
+            <div class="row">
+              <div class="col-md-12">
+                <form [formGroup]="accountLoginFormGroup" (ngSubmit)="login()">
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <input class="form-control form-control-lg" required id="email" autocomplete='email'
+                             formControlName='email'
+                             name="email" type="email" placeholder="{{'FORM_PLACEHOLDERS.USR_EMAIL' | translate}}">
+                    </div>
+                    <div *ngIf="accountLoginValidationErrors['email']" class="col-md-12 form-inline-error">
+                      {{accountLoginValidationErrors['email']}}
+                    </div>
+                  </div>
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <input class="form-control form-control-lg" required id="password" autocomplete='password'
+                             formControlName='password'
+                             name="password" type="password" placeholder="{{'FORM_PLACEHOLDERS.USR_PWD' | translate}}">
+                    </div>
+                    <div *ngIf="accountLoginValidationErrors['password']" class="col-md-12 form-inline-error">
+                      {{accountLoginValidationErrors['password']}}
+                    </div>
+                  </div>
+                  <div class="row mt-3">
+                    <div class="col-md-12 form-group text-center">
+                      <button type="submit" class="btn btn-lg btn-block btn-primary"
+                      [disabled]="!accountLoginFormGroup.valid">
+                        {{'FORM_ACTIONS.USR_ACC_LOGIN' | translate}}
+                        <span *ngIf="accountLoginViewState.isLoading">
+                    &nbsp;<i class="fa fa-spinner fa-spin"></i>
+                  </span>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="row mt-2" *ngIf="accountLoginViewState.isFinishedWithError && accountLoginViewState.error">
+                  <span class="col-md-12 text-center text-danger">{{accountLoginViewState.error}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-md-6 text-center">
+            <a routerLink="/register">
+              {{'FORM_ACTIONS.SIGN_UP' | translate}}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

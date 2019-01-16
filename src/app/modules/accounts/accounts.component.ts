@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
-import {AccountsService} from '../accounts/accounts.service';
+import {TranslateService} from '@ngx-translate/core';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   templateUrl: './accounts.component.html',
@@ -10,10 +11,13 @@ import {AccountsService} from '../accounts/accounts.service';
 export class AccountsComponent implements OnInit {
 
   constructor(
-    private accountsService: AccountsService,
+    private translateService: TranslateService,
+    private titleService: Title,
   ) {}
 
   ngOnInit() {
-    this.accountsService.setTitle('Home');
+    this.translateService.get('PAGE_TITLES.HOME').subscribe((title: string) => {
+      this.titleService.setTitle(title);
+    });
   }
 }

@@ -14,6 +14,10 @@ import * as AccountsPages from './pages';
           {
             path: 'register',
             component: AccountsPages.RegisterComponent,
+          },
+          {
+            path: 'login',
+            component: AccountsPages.LoginComponent,
           }
         ]
       }

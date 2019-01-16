@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
-import {Title} from '@angular/platform-browser';
+import {Observable} from 'rxjs';
+import {CookieService} from 'ngx-cookie-service';
 
 import {APIService} from '@services/api.service';
 
@@ -10,15 +11,31 @@ import {APIService} from '@services/api.service';
 export class AccountsService {
   constructor(
     private apiService: APIService,
-    private titleService: Title
+    private cookieService: CookieService,
   ) {
   }
 
   createAccount(data) {
-    return this.apiService.request(APIService.Methods.POST, 'accounts', data);
+    return this.apiService.request(APIService.Methods.POST, 'accounts/register', data);
   }
 
-  setTitle(title: string) {
-    this.titleService.setTitle('JTC - ' + title);
-  }
+  login(data) {
+    return new Observable((observer) => {
+      this.apiService.request(APIService.Methods.POST, 'accounts/login', data).subscribe(
+        response => {
+          // get stuff from response
+          // @ts-ignore - unrecognized props
+          const {access_token, expires_in} = response;
+          // convert timestamp to locale date
+          const expiry = new Date(Date.now() + (expires_in * 1000));
+          // set cookie
+          this.cookieService.set('token', access_token, expiry, '/');
+          observer.next();
+        },
+        error => {
+          observer.error(error);
+        }
+      );
+    });
+}
 }
