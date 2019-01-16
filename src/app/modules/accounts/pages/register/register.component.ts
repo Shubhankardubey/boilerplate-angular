@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 
 import {ViewStateModel} from '@shared/view-state.model';
 import {AccountsService} from '../../accounts.service';
@@ -13,12 +13,12 @@ import {AccountsService} from '../../accounts.service';
 
 export class RegisterComponent implements OnInit {
   accountCreationFormGroup = new FormGroup({
-    first_name: new FormControl(''),
+    first_name: new FormControl('', Validators.required),
     last_name: new FormControl(''),
     contact_phone: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    cnf_password: new FormControl(''),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+    cnf_password: new FormControl('', [Validators.required]),
   });
   accountCreationViewState = new ViewStateModel();
   accountCreationValidationErrors = {};

@@ -102,7 +102,7 @@ export class LocalErrorHandler implements ErrorHandler {
     CookieService,
     // services
     AppServices.IntercomService,
-    AppServices.APIService,
+    AppServices.APIService
   ],
   bootstrap: [AppComponent]
 })

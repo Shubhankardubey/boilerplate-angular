@@ -1,25 +1,3 @@
 <app-navbar></app-navbar>
-<div class="container container-fluid container-body">
-  <main role="main">
-    <!--action-->
-    <div class="row">
-      <button class="col-md-2 btn btn-sm btn-outline-secondary" routerLink="features">
-        Features
-      </button>
-      <button class="offset-1 col-md-2 btn btn-sm btn-outline-secondary" routerLink="about-us">
-        About Us
-      </button>
-      <button [disabled]="true" class="offset-1 col-md-2 btn btn-sm btn-outline-secondary" routerLink="lazy">
-        Load Lazy Module
-      </button>
-      <button class="offset-1 col-md-2 btn btn-sm btn-outline-secondary" routerLink="register">
-        Register
-      </button>
-    </div>
-    <hr>
-    <!--content-->
-    <router-outlet>
-    </router-outlet>
-  </main>
-</div>
+<router-outlet></router-outlet>
 <app-footer></app-footer>
