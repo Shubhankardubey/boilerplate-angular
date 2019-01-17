@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import {filter} from 'rxjs/operators';
-import {Navigation} from 'selenium-webdriver';
 
 @Component({
   selector: 'app-navbar',
