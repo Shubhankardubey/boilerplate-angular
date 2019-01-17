@@ -1,5 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {TranslateService} from '@ngx-translate/core';
+import {Title} from '@angular/platform-browser';
 
 import {ViewStateModel} from '@shared/view-state.model';
 import {AccountsService} from '../../accounts.service';
@@ -25,11 +28,16 @@ export class RegisterComponent implements OnInit {
 
   constructor(
     private accountsService: AccountsService,
+    private translateService: TranslateService,
+    private titleService: Title,
+    private router: Router,
   ) {
   }
 
   ngOnInit() {
-    this.accountsService.setTitle('Register');
+    this.translateService.get('PAGE_TITLES.REGISTER').subscribe((title: string) => {
+      this.titleService.setTitle(title);
+    });
   }
 
   createAccount() {
@@ -52,7 +60,7 @@ export class RegisterComponent implements OnInit {
         this.accountCreationFormGroup.enable();
         this.accountCreationViewState.finishedWithSuccess();
         // redirect to login page
-        console.log('done');
+        await this.router.navigateByUrl('/login');
       },
       error => {
         // obtain error from response

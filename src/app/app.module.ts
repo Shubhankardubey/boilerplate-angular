@@ -66,6 +66,7 @@ export class LocalErrorHandler implements ErrorHandler {
     AppRouting,
     // modules
     AppModules.AccountsModule,
+    AppModules.DashboardModule,
     // logging
     LoggerModule.forRoot({
       level: NgxLoggerLevel.DEBUG,

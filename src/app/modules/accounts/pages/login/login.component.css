@@ -1,0 +1,15 @@
+.form-group {
+  margin-bottom: 0 !important;
+}
+
+input {
+  padding: 20px;
+}
+
+input[type=email] {
+  border-radius: 4px 4px 0 0;
+}
+
+input[type=password] {
+  border-radius: 0 0 4px 4px;
+}

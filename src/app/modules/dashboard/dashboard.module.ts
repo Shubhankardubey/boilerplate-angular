@@ -1,17 +1,17 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {HttpClient} from '@angular/common/http';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {ReactiveFormsModule, FormsModule} from '@angular/forms';
+import {NgSelectModule} from '@ng-select/ng-select';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
-import {APIService} from '@services/api.service';
-
-import {AccountsComponent} from './accounts.component';
-import {AccountsRouting} from './accounts.routing';
-import {AccountsService} from './accounts.service';
-import * as AccountsPages from './pages';
+import {DashboardComponent} from './dashboard.component';
+import {DashboardRouting} from './dashboard.routing';
+import * as DashboardComponents from './components';
+import * as DashboardPages from './pages';
+import * as DashboardServices from './services';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -19,17 +19,18 @@ export function createTranslateLoader(http: HttpClient) {
 
 @NgModule({
   declarations: [
-    AccountsComponent,
+    DashboardComponent,
+    // components
+    DashboardComponents.LogoutComponent,
     // pages
-    AccountsPages.RegisterComponent,
-    AccountsPages.LoginComponent,
+    DashboardPages.HomeComponent,
   ],
   imports: [
     // common
     CommonModule,
     NgbModule,
     // routing
-    AccountsRouting,
+    DashboardRouting,
     // translation
     TranslateModule.forChild({
       loader: {
@@ -42,12 +43,14 @@ export function createTranslateLoader(http: HttpClient) {
     // for advanced form directives
     ReactiveFormsModule,
     FormsModule,
+    // dropdown selection module
+    NgSelectModule,
   ],
   providers: [
-    APIService,
-    AccountsService,
-  ],
+    // auth guard services
+    DashboardServices.AuthGuardService
+  ]
 })
 
-export class AccountsModule {
+export class DashboardModule {
 }

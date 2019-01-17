@@ -1,6 +1,7 @@
 {
   "FORM_HEADINGS": {
-    "USR_CREATE_ACC": "Please sign up"
+    "USR_CREATE_ACC": "Please sign up",
+    "USR_ACC_LOGIN": "Please sign in"
   },
   "FORM_LABELS": {
     "USR_F_NAME": "First Name",
@@ -19,9 +20,22 @@
     "USR_PHONE": "Enter Phone Number"
   },
   "FORM_ACTIONS": {
-    "USR_CREATE_ACC": "Create Account"
+    "USR_CREATE_ACC": "Create Account",
+    "USR_ACC_LOGIN": "Login",
+    "SIGN_UP": "Sign Up"
   },
   "FORM_MESSAGES": {
     "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in."
+  },
+  "PAGE_TITLES": {
+    "ACCOUNTS_LOGIN": "JTC - Login",
+    "REGISTER": "JTC - Register",
+    "HOME": "JTC - Home",
+    "DASHBOARD_HOME": "JTC - Dashboard"
+  },
+  "NAVBAR_HEADINGS": {
+    "USR_CREATE_ACC": "Register",
+    "USR_ACC_LOGIN": "Login",
+    "USR_ACC_LOGOUT": "Logout"
   }
 }

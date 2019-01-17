@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-
-import {AccountsService} from '../accounts/accounts.service';
+import {TranslateService} from '@ngx-translate/core';
+import {Title} from '@angular/platform-browser';
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 @Component({
   templateUrl: './accounts.component.html',
@@ -10,10 +12,19 @@ import {AccountsService} from '../accounts/accounts.service';
 export class AccountsComponent implements OnInit {
 
   constructor(
-    private accountsService: AccountsService,
+    private translateService: TranslateService,
+    private titleService: Title,
+    private router: Router,
+    private cookieService: CookieService
   ) {}
 
   ngOnInit() {
-    this.accountsService.setTitle('Home');
+    this.translateService.get('PAGE_TITLES.HOME').subscribe((title: string) => {
+      this.titleService.setTitle(title);
+    });
+    const cookieExixts: boolean = this.cookieService.check('token');
+    if (cookieExixts) {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 }
