@@ -24,6 +24,7 @@ export function createTranslateLoader(http: HttpClient) {
     DashboardComponents.LogoutComponent,
     // pages
     DashboardPages.HomeComponent,
+    DashboardPages.SettingsComponent,
   ],
   imports: [
     // common
@@ -48,7 +49,8 @@ export function createTranslateLoader(http: HttpClient) {
   ],
   providers: [
     // auth guard services
-    DashboardServices.AuthGuardService
+    DashboardServices.AuthGuardService,
+    DashboardServices.ProfileService
   ]
 })
 
