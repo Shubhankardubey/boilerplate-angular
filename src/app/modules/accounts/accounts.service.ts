@@ -37,5 +37,13 @@ export class AccountsService {
         }
       );
     });
-}
+  }
+
+  resetPassword(data) {
+    return this.apiService.request(APIService.Methods.POST, 'accounts/reset', data);
+  }
+
+  validateResetCode(data) {
+    return this.apiService.request(APIService.Methods.GET, `accounts/reset?code=${data}`, data);
+  }
 }

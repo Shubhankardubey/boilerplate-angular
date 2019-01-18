@@ -23,6 +23,8 @@ export function createTranslateLoader(http: HttpClient) {
     // pages
     AccountsPages.RegisterComponent,
     AccountsPages.LoginComponent,
+    AccountsPages.PasswordResetComponent,
+    AccountsPages.PasswordRecoverComponent,
   ],
   imports: [
     // common
