@@ -1,7 +1,10 @@
 {
   "FORM_HEADINGS": {
     "USR_CREATE_ACC": "Please sign up",
-    "USR_ACC_LOGIN": "Please sign in"
+    "USR_ACC_LOGIN": "Please sign in",
+    "RESET_PASSWORD": "Reset Your Password",
+    "RECOVER_PASSWORD": "Choose a new password",
+    "FORGOT_PASSWORD": "Forgot password"
   },
   "FORM_LABELS": {
     "USR_F_NAME": "First Name",
@@ -9,7 +12,8 @@
     "USR_EMAIL": "Email Address",
     "USR_PWD": "Password",
     "USR_CNF_PWD": "Confirm Password",
-    "USR_PHONE": "Phone Number"
+    "USR_PHONE": "Phone Number",
+    "USR_NEW_PASSWORD": "New password"
   },
   "FORM_PLACEHOLDERS": {
     "USR_F_NAME": "Enter First Name",
@@ -22,16 +26,21 @@
   "FORM_ACTIONS": {
     "USR_CREATE_ACC": "Create Account",
     "USR_ACC_LOGIN": "Login",
-    "SIGN_UP": "Sign Up"
+    "SIGN_UP": "Sign Up",
+    "USR_ACC_RST_PWD": "Send Reset Link",
+    "UPDATE_PASSWORD": "Update Password"
   },
   "FORM_MESSAGES": {
-    "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in."
+    "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in.",
+    "USR_RESET_REQUEST_SUCCESS": "We sent a recovery link to your email address:"
   },
   "PAGE_TITLES": {
     "ACCOUNTS_LOGIN": "JTC - Login",
     "REGISTER": "JTC - Register",
     "HOME": "JTC - Home",
-    "DASHBOARD_HOME": "JTC - Dashboard"
+    "DASHBOARD_HOME": "JTC - Dashboard",
+    "RESET_PASSWORD": "JTC - Reset Your Password",
+    "RECOVER_PASSWORD": "JTC - Choose a new password"
   },
   "NAVBAR_HEADINGS": {
     "USR_CREATE_ACC": "Register",

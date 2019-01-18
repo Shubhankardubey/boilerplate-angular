@@ -18,7 +18,15 @@ import * as AccountsPages from './pages';
           {
             path: 'login',
             component: AccountsPages.LoginComponent,
-          }
+          },
+          {
+            path: 'accounts/reset',
+            component: AccountsPages.PasswordResetComponent,
+          },
+          {
+            path: 'accounts/recover/:code',
+            component: AccountsPages.PasswordRecoverComponent,
+          },
         ]
       }
     ])
