@@ -14,6 +14,7 @@ import {NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
 export class NavbarComponent implements OnInit {
   isLogin: Boolean;
   firstName: any;
+  isCollapsed: any;
   constructor(
     private router: Router,
     private profileService: ProfileService
