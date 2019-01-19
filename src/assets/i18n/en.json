@@ -36,7 +36,7 @@
   "FORM_MESSAGES": {
     "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in.",
     "USR_RESET_REQUEST_SUCCESS": "We sent a recovery link to your email address:",
-    "USR_ACC_PWD_UPDATE_OK": "Account password was updated successfully"
+    "USR_ACC_PWD_UPDATE_OK": "Account password has been updated successfully"
   },
   "PAGE_TITLES": {
     "ACCOUNTS_LOGIN": "JTC - Login",
@@ -76,7 +76,7 @@
       "SAVE_CHANGES": "Save Changes"
   },
   "STATUS_REPORTS": {
-    "USR_PROFILE_UPDATE_OK": "Profile was updated successfully"
+    "USR_PROFILE_UPDATE_OK": "Profile has been updated successfully"
   }
 }
 }

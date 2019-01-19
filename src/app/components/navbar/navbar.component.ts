@@ -21,16 +21,15 @@ export class NavbarComponent implements OnInit {
     ).subscribe((event: NavigationEnd) => {
       if (event.url.includes('/dashboard')) {
         this.isLogin = true;
+        this.profileService.get().subscribe(
+          (profile) => {
+            // load common
+            this.firstName = profile['basic']['first_name'];
+          },
+          (error) => {},
+        );
       }
     });
   }
-  ngOnInit() {
-    this.profileService.get().subscribe(
-      (profile) => {
-        // load common
-        this.firstName = profile['basic']['first_name'];
-      },
-      (error) => {},
-    );
-  }
+  ngOnInit() {}
 }
