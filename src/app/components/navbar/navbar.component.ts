@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router, NavigationEnd} from '@angular/router';
 import {filter} from 'rxjs/operators';
 import {ProfileService} from '../../modules/dashboard/services';
+import {NgbCollapseModule} from '@ng-bootstrap/ng-bootstrap';
+import {NgbDropdown} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-navbar',

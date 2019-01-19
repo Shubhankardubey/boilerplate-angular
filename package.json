@@ -45,6 +45,7 @@
     "jquery": "^3.3.1",
     "ngx-cookie-service": "^2.1.0",
     "ngx-logger": "^3.0.5",
+    "popper.js": "^1.14.6",
     "raven-js": "^3.27.0",
     "rxjs": "^6.0.0",
     "winston": "^2.4.3",

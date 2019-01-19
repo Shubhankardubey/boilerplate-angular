@@ -12,7 +12,7 @@
     "USR_EMAIL": "Email Address",
     "USR_PWD": "Password",
     "USR_CNF_PWD": "Confirm Password",
-    "USR_PHONE": "Phone Number (Use Proper Format)",
+    "USR_PHONE": "Phone Number (Use International Format)",
     "USR_NEW_PASSWORD": "New password"
   },
   "FORM_PLACEHOLDERS": {

@@ -7,15 +7,13 @@
 }
 
 .navbar .dropdown-menu.show {
-  top: 48px !important;
+  top: 58px !important;
+  left: 92% !important;
+  position: fixed !important;
   background-color: #fcfcfc;
   min-width: 90px;
-  border-radius: 0 0 4px 4px;
 }
 
-.navbar .dropdown-menu{
-  width:10px;
-}
 
 .navbar .dropdown-item:hover {
   background-color: #343a401c;
