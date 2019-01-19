@@ -9,7 +9,12 @@
 .navbar .dropdown-menu.show {
   top: 48px !important;
   background-color: #fcfcfc;
+  min-width: 90px;
   border-radius: 0 0 4px 4px;
+}
+
+.navbar .dropdown-menu{
+  width:10px;
 }
 
 .navbar .dropdown-item:hover {

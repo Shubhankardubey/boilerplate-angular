@@ -17,6 +17,6 @@ export class ProfileService {
   }
 
   update(data) {
-    return this.apiService.request(APIService.Methods.PUT, 'profile/profile', data);
+    return this.apiService.request(APIService.Methods.PUT, 'profile', data);
   }
 }

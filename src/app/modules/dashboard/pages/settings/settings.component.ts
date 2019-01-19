@@ -24,9 +24,9 @@ const PROFILE_UPDATE_FORM_CTRL_MAPPINGS = {
 export class SettingsComponent implements OnInit, AfterViewInit {
   // for template access
   updatePasswordFormGroup = new FormGroup({
-    password: new FormControl('', [Validators.required]),
-    new_password: new FormControl('', [Validators.required]),
-    cnf_password: new FormControl('', [Validators.required])
+    password: new FormControl('', Validators.required),
+    new_password: new FormControl('', Validators.required),
+    cnf_password: new FormControl('', Validators.required)
   });
   updatePasswordViewState = new ViewStateModel();
   updatePasswordValidationErrors = {};

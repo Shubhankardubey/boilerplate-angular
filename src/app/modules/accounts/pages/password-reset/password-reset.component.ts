@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
+import {CookieService} from 'ngx-cookie-service';
+import {Router} from '@angular/router';
 
 import {ViewStateModel} from '@shared/view-state.model';
 import {AccountsService} from '../../accounts.service';
@@ -15,7 +17,7 @@ import {AccountsService} from '../../accounts.service';
 
 export class PasswordResetComponent implements OnInit {
   resetPasswordFormGroup = new FormGroup({
-    email: new FormControl('', [Validators.required])
+    email: new FormControl('', [Validators.required, Validators.email])
   });
   resetPasswordViewState = new ViewStateModel();
   resetPasswordValidationErrors = {};
@@ -23,7 +25,9 @@ export class PasswordResetComponent implements OnInit {
   constructor(
     private translateService: TranslateService,
     private titleService: Title,
-    private accountsService: AccountsService
+    private accountsService: AccountsService,
+    private router: Router,
+    private cookieService: CookieService
   ) {
   }
 
@@ -31,7 +35,12 @@ export class PasswordResetComponent implements OnInit {
     this.translateService.get('PAGE_TITLES.RESET_PASSWORD').subscribe((title: string) => {
       this.titleService.setTitle(title);
     });
+    const cookieExixts: boolean = this.cookieService.check('token');
+  if (cookieExixts) {
+    this.router.navigateByUrl('/dashboard');
   }
+  }
+
 
   resetPassword() {
     this.resetPasswordViewState.load();

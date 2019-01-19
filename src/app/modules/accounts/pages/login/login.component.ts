@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {CookieService} from 'ngx-cookie-service';
 import {Router} from '@angular/router';
 import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private accountsService: AccountsService,
     private router: Router,
+    private cookieService: CookieService,
     private translateService: TranslateService,
     private titleService: Title,
   ) {
@@ -32,6 +34,10 @@ export class LoginComponent implements OnInit {
     this.translateService.get('PAGE_TITLES.ACCOUNTS_LOGIN').subscribe((title: string) => {
       this.titleService.setTitle(title);
     });
+    const cookieExixts: boolean = this.cookieService.check('token');
+    if (cookieExixts) {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 
   login() {

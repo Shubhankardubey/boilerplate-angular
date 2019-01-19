@@ -80,7 +80,7 @@
                                              autocomplete='contact_phone'
                                              formControlName='contact_phone'
                                              name='contact_phone'
-                                             type='number'
+                                             type='text'
                                              placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
                                     </div>
                                     <div *ngIf="updateProfileValidationErrors['contact_phone']" class="form-inline-error">
@@ -209,7 +209,7 @@
                               class="btn btn-primary"
                               type="submit"
                               form="passwordUpdateForm"
-                              [disabled]="updatePasswordViewState.isLoading">
+                              [disabled]="updatePasswordViewState.isLoading || !updatePasswordFormGroup.valid">
                               {{'FORM_ACTIONS.UPDATE_PASSWORD' | translate}}
                               <span *ngIf="updatePasswordViewState.isLoading">
                                   &nbsp;<i class="fa fa-spinner fa-spin"></i>
