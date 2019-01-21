@@ -31,6 +31,8 @@ export class NavbarComponent implements OnInit {
           },
           (error) => {},
         );
+      } else if (event.url.includes('/login')) {
+        this.isLogin = false;
       }
     });
   }

@@ -83,6 +83,9 @@
                                              type='text'
                                              placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
                                     </div>
+                                    <div *ngIf="updateProfileFormGroup.controls.contact_phone.dirty && updateProfileFormGroup.controls.contact_phone.untouched" class="form-inline-error">
+                                        {{'FORM_PLACEHOLDERS.USR_PHONE_FORMAT' | translate}}
+                                      </div>
                                     <div *ngIf="updateProfileValidationErrors['contact_phone']" class="form-inline-error">
                                       {{updateProfileValidationErrors['contact_phone']}}
                                     </div>
