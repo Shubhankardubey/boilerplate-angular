@@ -1,0 +1,245 @@
+<div class="container-fluid container-body">
+    <div class="container col-md-8">
+      <div class="row">
+        <div class="col-md-4">
+          <h1 class="text-uppercase">
+            {{'DASH.LABELS.SETTINGS' | translate}}
+          </h1>
+        </div>
+      </div>
+      <div class="row mt-4">
+        <div class="col">
+          <ngb-tabset>
+            <ngb-tab title="{{'DASH.TAB_TITLES.PROFILE' | translate}}">
+              <ng-template ngbTabContent>
+                <div class="row">
+                  <div class="col-md-6">
+                    <!--section - profile form-->
+                    <div class="row mt-2">
+                      <div class="col-md-12">
+                        <!--section header + body-->
+                        <div class="row mt-2">
+                          <div class="col-md-12">
+                            <form
+                              id="profileUpdateForm"
+                              [formGroup]="updateProfileFormGroup"
+                              (ngSubmit)="updateProfile()">
+                              <!--form body-->
+                                <div class="row mt-2">
+                                  <div class="col-md-12">
+                                    <strong>{{"DASH.LABELS.USR_PROFILE_BASIC" | translate}}</strong>
+                                    <hr>
+                                  </div>
+                                  <div class="col-md-6 form-group">
+                                    <label class="control-label" for="user_first_name">
+                                      {{'FORM_LABELS.USR_F_NAME' | translate}}
+                                    </label>
+                                    <div>
+                                      <input class='form-control'
+                                             id='user_first_name'
+                                             autocomplete='first_name'
+                                             formControlName='first_name'
+                                             name='first_name'
+                                             type="text"
+                                             placeholder="{{'FORM_PLACEHOLDERS.USR_F_NAME' | translate}}">
+                                    </div>
+                                    <div *ngIf="updateProfileValidationErrors['first_name']" class="form-inline-error">
+                                      {{updateProfileValidationErrors['first_name']}}
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 form-group">
+                                    <label class="control-label" for="user_last_name">
+                                      {{'FORM_LABELS.USR_L_NAME' | translate}}
+                                    </label>
+                                    <div>
+                                      <input class='form-control'
+                                             id='user_last_name'
+                                             autocomplete='last_name'
+                                             formControlName='last_name'
+                                             name='last_name'
+                                             type="text"
+                                             placeholder="{{'FORM_PLACEHOLDERS.USR_L_NAME' | translate}}">
+                                    </div>
+                                    <div *ngIf="updateProfileValidationErrors['last_name']" class="form-inline-error">
+                                      {{updateProfileValidationErrors['last_name']}}
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="row mt-2">
+                                  <div class="col-md-12">
+                                    <strong>{{"DASH.LABELS.USR_PROFILE_CONTACT" | translate}}</strong>
+                                    <hr>
+                                  </div>
+                                  <div class="col-md-12 form-group">
+                                    <label class="control-label" for="user_contact_phone">
+                                      {{'FORM_LABELS.USR_PHONE' | translate}}
+                                    </label>
+                                    <div>
+                                      <input class='form-control no-spinner'
+                                             id='user_contact_phone'
+                                             autocomplete='contact_phone'
+                                             formControlName='contact_phone'
+                                             name='contact_phone'
+                                             type='text'
+                                             placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
+                                    </div>
+                                    <div *ngIf="updateProfileFormGroup.controls.contact_phone.dirty && updateProfileFormGroup.controls.contact_phone.untouched" class="form-inline-error">
+                                        {{'FORM_PLACEHOLDERS.USR_PHONE_FORMAT' | translate}}
+                                      </div>
+                                    <div *ngIf="updateProfileValidationErrors['contact_phone']" class="form-inline-error">
+                                      {{updateProfileValidationErrors['contact_phone']}}
+                                    </div>
+                                  </div>
+                                </div>
+                            </form>
+                          </div>
+                        </div>
+                        <!--section action-->
+                        <div class="row mt-2">
+                          <div class="col-md-12">
+                            <button
+                              *ngIf="updateProfileFormGroup.disabled && !updateProfileViewState.isLoading"
+                              class="btn btn-outline-primary"
+                              (click)="enableUpdateProfileForm()">
+                              {{'DASH.FORM_ACTIONS.UPDATE_PROFILE' | translate}}
+                            </button>
+                            <button
+                              form="profileUpdateForm"
+                              *ngIf="updateProfileFormGroup.enabled || updateProfileViewState.isLoading"
+                              type="submit"
+                              class="btn btn-primary"
+                              [disabled]="updateProfileViewState.isLoading">
+                              {{'DASH.FORM_ACTIONS.SAVE_CHANGES' | translate}}
+                              <span *ngIf="updateProfileViewState.isLoading">
+                                  &nbsp;<i class="fa fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                          </div>
+                        </div>
+                        <!--section reporting-->
+                        <div class="row mt-4">
+                          <div class="col-md-12">
+                            <div *ngIf="updateProfileViewState.isFinishedWithError && updateProfileViewState.error">
+                              <div class="status-report error">
+                                {{updateProfileViewState.error}}
+                              </div>
+                            </div>
+                            <div *ngIf="updateProfileViewState.isFinishedWithSuccess">
+                              <div class="status-report text-center text-success">
+                                {{'DASH.STATUS_REPORTS.USR_PROFILE_UPDATE_OK' | translate}}
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-tab>
+            <ngb-tab title="{{'DASH.TAB_TITLES.CHANGE_PWD' | translate}}">
+              <ng-template ngbTabContent>
+                <div class="row">
+                  <div class="col-md-6">
+                    <!--section - update password form-->
+                    <div class="row mt-2">
+                      <div class="col-md-12">
+                        <!--section body-->
+                        <div class="row mt-2">
+                          <div class="col-md-12">
+                            <form
+                              id="passwordUpdateForm"
+                              [formGroup]="updatePasswordFormGroup"
+                              (ngSubmit)="updatePassword()">
+                              <div class="row">
+                                <div class="col-md-12 form-group">
+                                  <label class="control-label" for="password">
+                                    {{'FORM_LABELS.USR_PWD' | translate}}
+                                  </label>
+                                  <input class='form-control'
+                                         id='password'
+                                         autocomplete='password'
+                                         formControlName='password'
+                                         name='password'
+                                         type="password"
+                                         placeholder="{{'FORM_PLACEHOLDERS.USR_CURRENT_PWD' | translate}}">
+                                  <div *ngIf="updatePasswordValidationErrors['password']" class="form-inline-error">
+                                    {{updatePasswordValidationErrors['password']}}
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12 form-group">
+                                  <label class="control-label" for="new_password">
+                                    {{'FORM_LABELS.USR_NEW_PASSWORD' | translate}}
+                                  </label>
+                                  <input class='form-control'
+                                         id='new_password'
+                                         autocomplete='new_password'
+                                         formControlName='new_password'
+                                         name='new_password'
+                                         type='password'
+                                         placeholder="{{'FORM_PLACEHOLDERS.USR_NEW_PWD' | translate}}">
+                                  <div *ngIf="updatePasswordValidationErrors['new_password']" class="form-inline-error">
+                                    {{updatePasswordValidationErrors['new_password']}}
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="col-md-12 form-group">
+                                  <label class="control-label" for="cnf_password">
+                                    {{'FORM_LABELS.USR_CNF_PWD' | translate}}
+                                  </label>
+                                  <input class='form-control'
+                                         id='cnf_password'
+                                         autocomplete='cnf_password'
+                                         formControlName='cnf_password'
+                                         name='cnf_password'
+                                         type='password'
+                                         placeholder="{{'FORM_PLACEHOLDERS.USR_PWD' | translate}}">
+                                  <div *ngIf="updatePasswordValidationErrors['cnf_password']" class="form-inline-error">
+                                    {{updatePasswordValidationErrors['cnf_password']}}
+                                  </div>
+                                </div>
+                              </div>
+                            </form>
+                          </div>
+                        </div>
+                        <!--section action-->
+                        <div class="row mt-2">
+                          <div class="col-md-12">
+                            <button
+                              class="btn btn-primary"
+                              type="submit"
+                              form="passwordUpdateForm"
+                              [disabled]="updatePasswordViewState.isLoading || !updatePasswordFormGroup.valid">
+                              {{'FORM_ACTIONS.UPDATE_PASSWORD' | translate}}
+                              <span *ngIf="updatePasswordViewState.isLoading">
+                                  &nbsp;<i class="fa fa-spinner fa-spin"></i>
+                                </span>
+                            </button>
+                          </div>
+                        </div>
+                        <!--section reporting-->
+                        <div class="row mt-2">
+                          <div class="col-md-12">
+                            <div *ngIf="updatePasswordViewState.isFinishedWithError && updatePasswordViewState.error">
+                              <div class="text-center text-danger">{{updatePasswordViewState.error}}</div>
+                            </div>
+                            <div *ngIf="updatePasswordViewState.isFinishedWithSuccess">
+                              <div
+                                class="text-center text-success">{{'FORM_MESSAGES.USR_ACC_PWD_UPDATE_OK' | translate}}</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+        </div>
+      </div>
+    </div>
+  </div>

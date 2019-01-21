@@ -41,7 +41,7 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="col-md-8 form-group">
+                  <div class="col-md-6 form-group">
                     <label class="control-label" for="email">
                       {{'FORM_LABELS.USR_EMAIL' | translate}}
                     </label>
@@ -53,13 +53,16 @@
                       {{accountCreationValidationErrors['email']}}
                     </div>
                   </div>
-                  <div class="col-md-4 form-group">
+                  <div class="col-md-6 form-group">
                     <label class="control-label" for="contact_phone">
                       {{'FORM_LABELS.USR_PHONE' | translate}}
                     </label>
                     <div>
                       <input class='form-control no-spinner' id='contact_phone' autocomplete='contact_phone'
-                        formControlName='contact_phone' name='contact_phone' type='number' placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
+                        formControlName='contact_phone' name='contact_phone' type='text' placeholder="{{'FORM_PLACEHOLDERS.USR_PHONE' | translate}}">
+                      <div *ngIf="accountCreationFormGroup.controls.contact_phone.dirty && accountCreationFormGroup.controls.contact_phone.untouched" class="form-inline-error">
+                        {{'FORM_PLACEHOLDERS.USR_PHONE_FORMAT' | translate}}
+                      </div>
                     </div>
                   </div>
                 </div>

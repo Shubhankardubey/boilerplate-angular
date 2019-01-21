@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Title} from '@angular/platform-browser';
 import {TranslateService} from '@ngx-translate/core';
 import {ActivatedRoute, Router} from '@angular/router';
+import {CookieService} from 'ngx-cookie-service';
 
 import {ViewStateModel} from '@shared/view-state.model';
 import {AccountsService} from '../../accounts.service';
@@ -30,6 +31,7 @@ export class PasswordRecoverComponent implements OnInit {
     private accountsService: AccountsService,
     private route: ActivatedRoute,
     private router: Router,
+    private cookieService: CookieService,
   ) {
   }
 
@@ -39,6 +41,10 @@ export class PasswordRecoverComponent implements OnInit {
     });
     this.code = this.route.snapshot.paramMap.get('code');
     this.validateResetCodeRequest();
+    const cookieExixts: boolean = this.cookieService.check('token');
+    if (cookieExixts) {
+      this.router.navigateByUrl('/dashboard');
+    }
   }
 
   validateResetCodeRequest() {

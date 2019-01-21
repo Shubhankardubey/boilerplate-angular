@@ -10,6 +10,7 @@ import {Angulartics2Module} from 'angulartics2';
 import {Angulartics2Mixpanel} from 'angulartics2/mixpanel';
 import {Angulartics2GoogleAnalytics} from 'angulartics2/ga';
 import {CookieService} from 'ngx-cookie-service';
+import {NgSelectModule} from '@ng-select/ng-select';
 
 import CONFIG from '@config';
 import {AppComponent} from './app.component';
@@ -62,6 +63,7 @@ export class LocalErrorHandler implements ErrorHandler {
     // for advanced form directives
     ReactiveFormsModule,
     FormsModule,
+    NgSelectModule,
     // routing
     AppRouting,
     // modules

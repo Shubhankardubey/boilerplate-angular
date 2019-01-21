@@ -1,3 +1,21 @@
 .navbar {
   min-height: 60px;
 }
+
+.navbar .dropdown-toggle:hover {
+  cursor: pointer;
+}
+
+.navbar .dropdown-menu.show {
+  top: 58px !important;
+  left: 92% !important;
+  position: fixed !important;
+  background-color: #fcfcfc;
+  min-width: 90px;
+}
+
+
+.navbar .dropdown-item:hover {
+  background-color: #343a401c;
+  cursor: pointer;
+}

@@ -21,7 +21,11 @@ import * as DashboardServices from './services';
           {
             path: '',
             component: DashboardPages.HomeComponent,
-          }
+          },
+          {
+            path: 'settings',
+            component: DashboardPages.SettingsComponent,
+          },
         ]
       }
     ])

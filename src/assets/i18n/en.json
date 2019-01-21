@@ -21,18 +21,23 @@
     "USR_EMAIL": "Enter Email Address",
     "USR_PWD": "Enter Password",
     "USR_CNF_PWD": "Re-enter Password",
-    "USR_PHONE": "Enter Phone Number"
+    "USR_PHONE": "Enter Phone Number",
+    "USR_PHONE_FORMAT":"Use International Format",
+    "USR_CURRENT_PWD": "Enter Current Password",
+    "USR_NEW_PWD": "Enter New Password"
   },
   "FORM_ACTIONS": {
     "USR_CREATE_ACC": "Create Account",
     "USR_ACC_LOGIN": "Login",
     "SIGN_UP": "Sign Up",
     "USR_ACC_RST_PWD": "Send Reset Link",
-    "UPDATE_PASSWORD": "Update Password"
+    "UPDATE_PASSWORD": "Update Password",
+    "UPDATE": "Update"
   },
   "FORM_MESSAGES": {
     "USR_CREATE_ACC_OK": "User account was created successfully. Please head to the login page to sign in.",
-    "USR_RESET_REQUEST_SUCCESS": "We sent a recovery link to your email address:"
+    "USR_RESET_REQUEST_SUCCESS": "We sent a recovery link to your email address:",
+    "USR_ACC_PWD_UPDATE_OK": "Account password has been updated successfully"
   },
   "PAGE_TITLES": {
     "ACCOUNTS_LOGIN": "JTC - Login",
@@ -40,11 +45,40 @@
     "HOME": "JTC - Home",
     "DASHBOARD_HOME": "JTC - Dashboard",
     "RESET_PASSWORD": "JTC - Reset Your Password",
-    "RECOVER_PASSWORD": "JTC - Choose a new password"
+    "RECOVER_PASSWORD": "JTC - Choose a new password",
+    "SETTINGS": "JTC - Settings"
   },
   "NAVBAR_HEADINGS": {
     "USR_CREATE_ACC": "Register",
     "USR_ACC_LOGIN": "Login",
-    "USR_ACC_LOGOUT": "Logout"
+    "USR_ACC_LOGOUT": "Logout",
+    "USR_ACC_HOME": "Home",
+    "USR_ACC_SETTINGS": "Settings"
+  },
+  "DASH": {
+    "WELCOME": "WELCOME TO DASHBOARD",
+    "USR_DRP_DWN_ACTIONS": {
+      "SETTINGS": "Settings",
+      "ACC_LOGOUT": "Logout"
+    },
+    "TAB_TITLES": {
+      "CHANGE_PWD": "Change Password",
+      "IDENTITY": "Identity",
+      "PROFILE": "Profile"
+    },
+    "LABELS": {
+      "SETTINGS": "Settings",
+      "USR_PROFILE_BASIC": "Basic Details",
+      "USR_PROFILE_ADDRESS": "Address Details",
+      "USR_PROFILE_CONTACT": "Contact Details",
+      "USR_PROFILE_LOGO": "Logo"
+    },
+    "FORM_ACTIONS": {
+      "UPDATE_PROFILE": "Update Profile",
+      "SAVE_CHANGES": "Save Changes"
+  },
+  "STATUS_REPORTS": {
+    "USR_PROFILE_UPDATE_OK": "Profile has been updated successfully"
   }
+}
 }
